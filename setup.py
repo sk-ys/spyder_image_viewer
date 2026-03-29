@@ -7,7 +7,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="spyder-image-viewer",
-    version="0.1.1",
+    version="0.1.2",
     description="A lightweight NumPy array image viewer for Spyder",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
