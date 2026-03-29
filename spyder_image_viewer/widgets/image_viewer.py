@@ -646,6 +646,9 @@ class ImageViewerWidget(PluginMainWidget):
         """Keep overlay geometry synced with viewport size."""
         if watched is self.scroll_area.viewport() and event.type() == QEvent.Wheel:
             if event.modifiers() & Qt.ControlModifier:
+                if self.original_pixmap is None:
+                    return False
+
                 pos = self._event_pos(event)
                 self._zoom_anchor_override = self._compute_anchor_from_viewport_pos(pos)
                 if self._apply_mouse_wheel_zoom(event.angleDelta().y()):
@@ -653,7 +656,10 @@ class ImageViewerWidget(PluginMainWidget):
                     return True
 
                 self._zoom_anchor_override = None
-                return False
+                # Prevent default wheel scrolling when Ctrl+wheel does not change zoom
+                # (e.g. already at max/min zoom).
+                event.accept()
+                return True
 
         if watched is self.scroll_area.viewport() and event.type() == QEvent.MouseButtonPress:
             if event.button() == Qt.LeftButton and self._start_drag_pan(self._event_pos(event)):
