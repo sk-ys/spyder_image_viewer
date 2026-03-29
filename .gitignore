@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# IDE/editor-specific files
+/.vscode
+/.spyproject
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs
+/logs
