@@ -48,7 +48,15 @@ Float normalization behavior:
 
 ## Installation
 
-### Option 1: Editable install (recommended for local development)
+### Option 1: Install from PyPI (recommended)
+
+```bash
+pip install spyder-image-viewer
+```
+
+After installation, restart Spyder to load the plugin.
+
+### Option 2: Editable install (for local development)
 
 ```bash
 cd spyder_image_viewer
@@ -57,7 +65,7 @@ pip install -e .
 
 This allows you to edit the source code and see changes reflected immediately.
 
-### Option 2: Standard install
+### Option 3: Standard install from source
 
 ```bash
 cd spyder_image_viewer
